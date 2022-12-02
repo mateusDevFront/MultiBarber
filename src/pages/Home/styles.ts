@@ -1,9 +1,12 @@
-import React from 'react';
 import styled from 'styled-components/native';
 
+export const ImageBackground = styled.ImageBackground.attrs({
+  resizeMode: 'stretch'
+})`
+  flex: 1;
+`
 export const Container = styled.View`
   flex: 1;
-  background-color: #1b1c29;
   justify-content: center;
   padding-left: 50px;
   padding-right: 50px;
@@ -35,7 +38,7 @@ export const ButtonBorder = styled.TouchableOpacity`
 `;
 export const ButtonBorderText = styled.Text`
   color: #fff;
-  font-size: 19px;
+  font-size: 16px;
 `;
 export const Logo = styled.Image`
   justify-content: center;

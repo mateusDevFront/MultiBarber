@@ -17,9 +17,7 @@ import {Button} from '../../components/Button';
 import logo from '../../assets/Logo.png';
 import Toast from 'react-native-toast-message';
 
-type Nav = {
-  navigate: (value: string) => void;
-};
+import {Nav} from '../../routes/mainTab'
 
 export default function SignIn() {
   const {signIn, user} = useContext(AuthContext);

@@ -7,7 +7,7 @@ import {View, Text, ScrollView, Modal} from 'react-native';
 import ModalInfo from './components/modalSchedule';
 import {Button} from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
-
+import {Nav} from '../../routes/mainTab'
 export interface SchedulesPropsItems {
   id: string;
   customer: string;
@@ -22,9 +22,6 @@ export interface SchedulesPropsItems {
 interface ShedulesProps {
   schedules: SchedulesPropsItems[];
 }
-type Nav = {
-  navigate: (value: string) => void;
-};
 
 export default function Schedule({schedules}: ShedulesProps) {
   const {user} = useContext(AuthContext);

@@ -17,6 +17,7 @@ import {
 import {AuthContext} from '../../context/AuthContext';
 import {api} from '../../services/api';
 import Toast from 'react-native-toast-message';
+import {Nav} from '../../routes/mainTab'
 
 interface UserProps {
   id: string;
@@ -30,9 +31,6 @@ interface AccountProps {
   premium: boolean;
 }
 
-type Nav = {
-  navigate: (value: string) => void;
-};
 export default function Account({}: AccountProps) {
   const {navigate} = useNavigation<Nav>();
   const {signOut} = useContext(AuthContext);
@@ -41,8 +39,6 @@ export default function Account({}: AccountProps) {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-
-  console.log('[items] ->', items);
 
   useEffect(() => {
     async function getDetailUser() {

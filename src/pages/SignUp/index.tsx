@@ -16,9 +16,9 @@ import {useNavigation} from '@react-navigation/native';
 import {Button} from '../../components/Button';
 import logo from '../../assets/Logo.png';
 import Toast from 'react-native-toast-message';
-
+import {Nav} from '../../routes/mainTab'
 export default function SignUp() {
-  const navigation = useNavigation();
+  const {navigate} = useNavigation<Nav>();
 
   const {signUp} = useContext(AuthContext);
 
@@ -70,9 +70,6 @@ export default function SignUp() {
     }
   }
 
-  function handleSignIn() {
-    navigation.goBack();
-  }
   return (
     <Container>
       <ContainerLogo>
@@ -129,7 +126,7 @@ export default function SignUp() {
 
         <ContainerAlignDescription>
           <TextDescription>Já possui uma conta?</TextDescription>
-          <ButtonStrong onPress={handleSignIn}>
+          <ButtonStrong onPress={() => navigate('SignIn')}>
             <Strong>Entre aqui!</Strong>
           </ButtonStrong>
         </ContainerAlignDescription>

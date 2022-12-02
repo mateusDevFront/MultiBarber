@@ -100,7 +100,7 @@ export default function SchedulesHairCut({haircuts}: NewProps) {
         <BoxInputName style={{marginTop: 15}}>
           <Input
             value={time}
-            keyboardType="name-phone-pad"
+            keyboardType="numbers-and-punctuation"
             onChangeText={e => setTime(e)}
             placeholder="Horário"
             placeholderTextColor="#878787"

@@ -17,6 +17,10 @@ export type StackPramsList = {
   NewHairCuts: undefined
 };
 
+export type Nav = {
+  navigate: (value: string) => void;
+};
+
 const Stack = createNativeStackNavigator<StackPramsList>();
 
 export default function MainTab() {

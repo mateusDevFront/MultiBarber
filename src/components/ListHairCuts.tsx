@@ -34,7 +34,6 @@ interface ItemProps extends TouchableOpacityProps {
 export function ListHairCuts({data, ...rest}: ItemProps) {
   return (
     <ContainerButton {...rest}>
-      {/* {<Icon name="bookmark" size={50} color="#9d1919" />} */}
       <Image
         source={Barber}
         style={{
