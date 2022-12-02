@@ -15,7 +15,6 @@ export default function Planos() {
   return (
     <Container>
       <ContainerBox>
-        <Title style={{marginBottom: 15, fontSize: 30, fontWeight: 'bold'}}>Planos</Title>
         <BoxGratuito>
           <Title style={{fontWeight: 'bold', fontSize: 17}}>Plano Gratuito</Title>
           <Description>

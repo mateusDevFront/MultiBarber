@@ -5,10 +5,13 @@ import {ListShedules} from '../../components/ListSchedules';
 import {AuthContext} from '../../context/AuthContext';
 import {View, Text, ScrollView, Modal} from 'react-native';
 import ModalInfo from './components/modalSchedule';
+import {Button} from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
 
 export interface SchedulesPropsItems {
   id: string;
   customer: string;
+  time: string;
   haircut: {
     id: string;
     name: string;
@@ -19,16 +22,20 @@ export interface SchedulesPropsItems {
 interface ShedulesProps {
   schedules: SchedulesPropsItems[];
 }
+type Nav = {
+  navigate: (value: string) => void;
+};
 
 export default function Schedule({schedules}: ShedulesProps) {
   const {user} = useContext(AuthContext);
+  const {navigate} = useNavigation<Nav>();
 
   const [schedulesList, setSchedulesList] = useState(schedules || []);
   const [hellow, setHellow] = useState('');
 
   const [modalVisible, setModalVisible] = useState(false);
   const [items, setItems] = useState<SchedulesPropsItems>();
-
+  
   useEffect(() => {
     async function getSearchSchedules() {
       const response = await api.get('/shedule');
@@ -58,7 +65,6 @@ export default function Schedule({schedules}: ShedulesProps) {
   }
 
   async function handleFinish(id: string) {
-    /* console.log(id) */
     try {
       const response = await api.delete('/shedule', {
         params: {
@@ -99,6 +105,12 @@ export default function Schedule({schedules}: ShedulesProps) {
           </View>
         ))}
       </ScrollView>
+
+      <Button
+        activeOpacity={0.5}
+        title="novo agendamento"
+        onPress={() => navigate('SchedulesHairCut')}
+      />
 
       <Modal transparent={true} visible={modalVisible} animationType="fade">
         <ModalInfo

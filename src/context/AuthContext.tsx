@@ -2,7 +2,6 @@ import React, {useState, createContext, ReactNode, useEffect} from 'react';
 import {api} from '../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
-import {useNavigation} from '@react-navigation/native';
 
 interface AuthContextData {
   user: UserProps;

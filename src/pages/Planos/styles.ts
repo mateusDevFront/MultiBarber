@@ -17,11 +17,11 @@ export const Description = styled.Text`
   letter-spacing: 1.4px;
 `;
 export const ContainerBox = styled.View`
-  margin-top: 90px;
   align-items: center;
 `;
 export const BoxGratuito = styled.View`
   background-color: #11121d;
+  margin-top: 20px;
   border-radius: 8px;
   width: 100%;
   padding-top: 20px;

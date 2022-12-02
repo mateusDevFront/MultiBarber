@@ -73,7 +73,7 @@ export default function ModalSchedule({
         </ContainerTitle>
         <ContainerListDetail>
           <Align>
-            <Icon name="turned-in" color="#0AFF4F" size={20} />
+            <Icon name="mood" color="#0AFF4F" size={20} />
             <Name>{data?.customer}</Name>
           </Align>
           <Align style={{marginTop: 15}}>
@@ -83,6 +83,10 @@ export default function ModalSchedule({
           <Align style={{marginTop: 15}}>
             <Icon name="attach-money" color="#0AFF4F" size={20} />
             <Price>{data?.haircut?.price}</Price>
+          </Align>
+          <Align style={{marginTop: 15}}>
+            <Icon name="access-time" color="#0AFF4F" size={20} />
+            <Price>{data?.time}</Price>
           </Align>
         </ContainerListDetail>
         <Button onPress={() => finishSchedule()} title="Finalizar cliente" />

@@ -1,12 +1,13 @@
 import React, {useContext} from 'react';
-import {View, ActivityIndicator} from 'react-native';
-import {AuthContext} from '../context/AuthContext'
+import {View, ActivityIndicator, Image} from 'react-native';
+import {AuthContext} from '../context/AuthContext';
+import Logo from '../assets/Logo.png';
 
 import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
 
 function Routes() {
-  const {isAuthenticated, loading} = useContext(AuthContext)
+  const {isAuthenticated, loading} = useContext(AuthContext);
 
   if (loading) {
     return (
@@ -17,7 +18,8 @@ function Routes() {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <ActivityIndicator size={60} color="red" />
+        <Image source={Logo} />
+        <ActivityIndicator size={30} color="#9d1919" />
       </View>
     );
   }
