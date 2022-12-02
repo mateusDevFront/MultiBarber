@@ -10,7 +10,7 @@ Aplicativo completo para organizar os agendamentos de qualquer Barbearia
 
 **UI/UX:** Figma
 
-**Mobile:**React Native, Styled-Components, Typescript  
+**Mobile:** React Native, Styled-Components, Typescript  
 
 **Back-end:** Node, Express, Prisma
 
